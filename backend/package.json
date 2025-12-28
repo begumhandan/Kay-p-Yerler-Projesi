@@ -1,10 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon --exec tsx src/index.ts",
-    "start": "tsx src/index.ts"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
   },
   "keywords": [],
   "author": "",
@@ -12,19 +14,22 @@
   "description": "",
   "dependencies": {
     "@libsql/client": "^0.15.15",
+    "bcrypt": "^6.0.0",
     "better-sqlite3": "^12.4.6",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
+    "csurf": "^1.11.0",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.0.2",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.5",
-    "@types/node": "^24.10.1",
     "drizzle-kit": "^0.31.7",
-    "nodemon": "^3.1.11",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.20.6"
+    "nodemon": "^3.1.11"
   }
 }

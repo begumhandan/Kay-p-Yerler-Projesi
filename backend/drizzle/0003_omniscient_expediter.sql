@@ -1,0 +1,1 @@
+ALTER TABLE `locations` ADD `updated_at` text DEFAULT CURRENT_TIMESTAMP NOT NULL;

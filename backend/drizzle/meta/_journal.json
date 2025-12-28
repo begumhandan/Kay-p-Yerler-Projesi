@@ -5,8 +5,50 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1764102938673,
-      "tag": "0000_productive_penance",
+      "when": 1764342879800,
+      "tag": "0000_wide_wendell_rand",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1764508552630,
+      "tag": "0001_nosy_living_lightning",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1764754281893,
+      "tag": "0002_slimy_alex_power",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1764754653796,
+      "tag": "0003_omniscient_expediter",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1766256212198,
+      "tag": "0004_overconfident_captain_britain",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1766839349629,
+      "tag": "0005_easy_reaper",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1766860885731,
+      "tag": "0006_futuristic_shinko_yamashiro",
       "breakpoints": true
     }
   ]
