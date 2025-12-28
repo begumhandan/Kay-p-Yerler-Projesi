@@ -19,7 +19,6 @@ const db = drizzle(sqlite);
 const migrationsFolder = path.join(process.cwd(), 'drizzle');
 
 async function main() {
-    console.log('📦 Migrations çalıştırılıyor:', migrationsFolder);
 
     if (!fs.existsSync(migrationsFolder)) {
         console.error(' Hata: Migrations klasörü bulunamadı:', migrationsFolder);

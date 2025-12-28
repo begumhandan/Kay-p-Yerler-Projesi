@@ -17,7 +17,6 @@ userRouter.post("/register", userController.Register);
 
 // POST: Giriş Yap (Login)
 userRouter.post("/login", userController.Login);
-module.exports = userRouter;
 
 //PUT:sadece giriş yapmış kullanıcılar için(protectRoute) - tek dosya
 userRouter.put("/:id/avatar", protectRoute, upload.single("avatar"), userController.updateAvatar);

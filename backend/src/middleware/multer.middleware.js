@@ -2,7 +2,7 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
-//yüklenecek Klasörü Ayarla
+//yüklenecek klasörü Ayarla
 const uploadDir = "uploads";
 
 // klasör yoksa oluştur (Hata almamak için)

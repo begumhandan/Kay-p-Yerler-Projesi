@@ -197,7 +197,7 @@ const updateAvatar = async (req, res) => {
       return res.status(400).json({ error: "Lütfen bir resim dosyası seçin." });
     }
 
-    // DÜZELTME: Doğru URL yapısı (http ve localhost)
+    // url
     const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
 
     await db

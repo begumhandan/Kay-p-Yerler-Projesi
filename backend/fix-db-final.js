@@ -1,4 +1,3 @@
-// fix-db-final.js
 const { db } = require("./src/db"); // Dosya yolun src/db ise
 const { sql } = require("drizzle-orm");
 
@@ -6,10 +5,10 @@ async function fixDatabase() {
   console.log("🛠️ Veritabanı kökten tamir ediliyor...");
 
   try {
-    // 1. İşlem güvenliği için foreign key kontrolünü kapat
+    //İşlem güvenliği için foreign key kontrolünü kapat
     await db.run(sql`PRAGMA foreign_keys=OFF`);
 
-    // 2. Mevcut tabloyu yedek ismine çek
+    //Mevcut tabloyu yedek ismine çek
     console.log("1. Eski tablo yedekleniyor...");
     try {
         await db.run(sql`ALTER TABLE visitors RENAME TO visitors_backup`);
@@ -17,7 +16,7 @@ async function fixDatabase() {
         console.log("   (Tablo zaten yedeklenmiş olabilir veya yok, devam ediliyor...)");
     }
 
-    // 3. Yeni tabloyu İSTEDİĞİMİZ sütunlarla sıfırdan yarat
+    //Yeni tabloyu istediğim sütunlarla sıfırdan yarat
     console.log("2. Yeni tablo oluşturuluyor...");
     await db.run(sql`
       CREATE TABLE IF NOT EXISTS visitors (
@@ -30,8 +29,8 @@ async function fixDatabase() {
       )
     `);
 
-    // 4. Verileri yedekten yeni tabloya aktar
-    // İŞTE SİHİR BURADA: visit_count sütunu için "1" değerini zorla basıyoruz.
+    //verileri yedekten yeni tabloya aktar
+    //visit_count sütunu için "1" değerini zorla basıyoruz.
     console.log("3. Veriler aktarılıyor...");
     try {
         await db.run(sql`
@@ -44,19 +43,19 @@ async function fixDatabase() {
         console.log("   Aktarılacak eski veri bulunamadı (Tablo boş olabilir).");
     }
 
-    // 5. Yedek tabloyu sil
+    //yedek tabloyu sil
     console.log("4. Temizlik yapılıyor...");
     try {
         await db.run(sql`DROP TABLE visitors_backup`);
     } catch (e) {}
 
-    // 6. Foreign keys geri aç
+    //foreign keys geri aç
     await db.run(sql`PRAGMA foreign_keys=ON`);
 
-    console.log("✅ İŞLEM TAMAMLANDI! Sütun eklendi ve veriler korundu.");
+    console.log("İŞLEM TAMAMLANDI! Sütun eklendi ve veriler korundu.");
 
   } catch (error) {
-    console.error("❌ Kritik Hata:", error.message);
+    console.error("Kritik Hata:", error.message);
   }
 }
 

@@ -6,7 +6,7 @@ const { users } = require("./db/schema");
 
 async function resetPassword() {
   try {
-    // veritabanında kayıtlı olan admin emailini buraya yazmalısın
+    // veritabanında kayıtlı olan admin emailini buraya yazmalısın.
     // (Önceki veritabanı dökümünde "admin@test.com" veya "begum@gmail.com" görünüyordu)
     const email = "admin@example.com"; 
     const newPassword = "123456";

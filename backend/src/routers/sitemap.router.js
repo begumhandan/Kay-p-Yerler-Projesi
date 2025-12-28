@@ -5,7 +5,7 @@ const { eq } = require("drizzle-orm");
 
 const router = Router();
 
-// Domain adresi - Canlıda değiştirmelisiniz
+// Domain adresi 
 const BASE_URL = "http://localhost:5173";
 
 router.get("/sitemap.xml", async (req, res) => {

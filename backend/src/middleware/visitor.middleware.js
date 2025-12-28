@@ -1,4 +1,3 @@
-// src/middleware/visitor.middleware.js
 const { eq, sql } = require("drizzle-orm");
 const { db } = require("../db");
 const { visitors } = require("../db/schema");

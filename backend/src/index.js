@@ -42,9 +42,6 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
-
-console.log("📂 RESİM KLASÖRÜ YOLU:", uploadDir);
-
 //scrf koruma
 app.use(csrfCheck);
 

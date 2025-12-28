@@ -29,9 +29,12 @@ router.get("/admin/all", protectRoute, checkRole("admin"), controller.getAllAnno
 const uploadFields = uploadMiddleware.fields([{ name: "image", maxCount: 1 }, { name: "images", maxCount: 10 }]);
 
 router.post("/", protectRoute, checkRole("admin"), uploadFields, controller.createAnnouncement);
+
 // PUT ile güncelleme (Admin ve Editor)
 router.put("/:id", protectRoute, checkRole("admin", "editor"), uploadFields, controller.updateAnnouncement);
+
 router.delete("/:id", protectRoute, checkRole("admin"), controller.deleteAnnouncement);
-router.delete("/images/:id", protectRoute, checkRole("admin", "editor"), controller.deleteAnnouncementImage); // Yeni: Galeri resmi silme rotası
+
+router.delete("/images/:id", protectRoute, checkRole("admin", "editor"), controller.deleteAnnouncementImage); 
 
 module.exports = router;
